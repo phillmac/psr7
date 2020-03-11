@@ -145,6 +145,10 @@ class Stream implements StreamInterface
         }
 
         $stats = fstat($this->stream);
+        print_r([
+            'stats' => $stats,
+            'stream' => $this->stream
+            ]);
         if (isset($stats['size'])) {
             $this->size = $stats['size'];
             return $this->size;
