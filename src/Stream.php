@@ -48,6 +48,10 @@ class Stream implements StreamInterface
 
         if (isset($options['size'])) {
             $this->size = $options['size'];
+            
+            if($this->size === 0) {
+                throw new \Exception('Size is zero');
+            }
         }
 
         $this->customMetadata = isset($options['metadata'])
