@@ -147,7 +147,8 @@ class Stream implements StreamInterface
         $stats = fstat($this->stream);
         print_r([
             'stats' => $stats,
-            'stream' => $this->stream
+            'stream' => $this->stream,
+            'stream_type' => get_resource_type($this->stream)
             ]);
         if (isset($stats['size'])) {
             $this->size = $stats['size'];
